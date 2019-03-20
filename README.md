@@ -9,23 +9,23 @@ TLDR;
 Download [Anaconda Navigator](https://www.anaconda.com/distribution/).
 
 * After installation, open Anaconda Prompt.
-* Confirm **conda** is installed correctly, by typing: conda -V
+* Confirm **conda** is installed correctly, by typing: `conda -V`
 
 You should see the following:
-conda 4.6.7
+`conda 4.6.7`
 
-* Confirm Python is installed correctly by typing: python -V
+* Confirm Python is installed correctly by typing: `python -V`
 
 You should see the following:
-Python 3.6.7
+`Python 3.6.7`
 
 * Confirm your conda environment is up-to-date, type: 
-conda update conda
-conda update anaconda
+```conda update conda
+conda update anaconda```
 
-* Confirm Anaconda SciPy environment is up-to-date, type: conda update scikit-learn
+* Confirm Anaconda SciPy environment is up-to-date, type: `conda update scikit-learn`
 
-* Confirm your SciPy environment, type: python versions.py
+* Confirm your SciPy environment, type: `python versions.py`
 
 You should see the following:
 ```scipy: 1.2.1
