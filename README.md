@@ -20,15 +20,18 @@ You should see the following:
 `Python 3.6.7`
 
 * Confirm your conda environment is up-to-date, type: 
-```conda update conda
-conda update anaconda```
+```
+conda update conda
+conda update anaconda
+```
 
 * Confirm Anaconda SciPy environment is up-to-date, type: `conda update scikit-learn`
 
 * Confirm your SciPy environment, type: `python versions.py`
 
 You should see the following:
-```scipy: 1.2.1
+```
+scipy: 1.2.1
 numpy: 1.16.2
 matplotlib: 3.0.3
 pandas: 0.24.1
