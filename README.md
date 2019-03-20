@@ -28,11 +28,11 @@ conda update anaconda
 * Confirm your SciPy environment, type: python versions.py
 
 You should see the following:
-scipy: 1.2.1
+```scipy: 1.2.1
 numpy: 1.16.2
 matplotlib: 3.0.3
 pandas: 0.24.1
 statsmodels: 0.9.0
 sklearn: 0.20.2
-
+```
 You can find **versions.py** in the repository.
