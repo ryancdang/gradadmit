@@ -21,7 +21,7 @@ while True:
     print('3 - Run GradAdvice')
     print('4 - Exit')
 
-    x = str(input('Enter your choice -> '))
+    x = input('Enter your choice -> ')
     
     # switch
     if x == '1':
@@ -33,7 +33,7 @@ while True:
                 print(str(i+2) + ' - [Empty]')
             print('0 - Cancel')
 
-            y = str(input('Enter your choice -> '))
+            y = input('Enter your choice -> ')
             
             if y == '0':
                 # return to the main menu
@@ -49,7 +49,7 @@ while True:
                     print('3 - Law')
                     print('0 - Cancel')
 
-                    z = str(input('Enter your choice -> '))
+                    z = input('Enter your choice -> ')
 
                     if z == '0':
                         # return to the graduate school menu
@@ -85,19 +85,19 @@ while True:
             print('6 - Print')
             print('7 - Cancel')
 
-            m = str(input('Enter your choice -> '))
+            m = input('Enter your choice -> ')
 
             if m == '7':
                 # return to the main menu
                 break
             elif m == '1':
-                main_input = int(input('Enter a GRE score  '))
+                main_input = input('Enter a GRE score  ')
                 if (test.error_check(m, main_input) == True):
                     gre_score = main_input
                 else:
                     print('Sorry, you need to enter a number between 0 and 340.')
             elif m == '2':
-                main_input = int(input('Enter a TOEFL score  '))
+                main_input = input('Enter a TOEFL score  ')
                 if (test.error_check(m, main_input) == True):
                     toefl_score = main_input
                 else:
@@ -110,13 +110,13 @@ while True:
             #elif m == '5':
             #    lor_val = float(input('Enter a LOR value  '))
             elif m == '3':
-                main_input = int(input('Enter a CGPA value  '))
+                main_input = input('Enter a CGPA value  ')
                 if (test.error_check(m, main_input) == True):
                     cgpa_val = main_input
                 else:
                     print('Sorry, you need to enter a number between 0.00 and 10.00')
             elif m == '4':
-                main_input = input('Enter a Research Experience value  ')
+                main_input('Enter a Research Experience value  ')
                 if (test.error_check(m, main_input) == True):
                     main_input = main_input.lower()
                     if (main_input == 'y' or main_input == 'yes'):
@@ -136,7 +136,7 @@ while True:
                     with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
                         csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
 
-                        myData = ['000', gre_score, toefl_score, 3, 2.5, 2.5, cgpa_val, res_val, 0.0]
+                        myData = ['000', gre_score, toefl_score, 0, 0.0, 0.0, cgpa_val, res_val, 0.0]
 
                         # write
                         csv_writer.writerow(myData)
