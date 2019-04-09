@@ -15,18 +15,16 @@ admit_val = 0.0
 
 # user interface
 while True:
-    test.clear()
     print('Choose from the following menu options:')
     print('1 - Select a Graduate School and Program')
     print('2 - Calculate Chance of Admit')
     print('3 - Run GradAdvice')
     print('4 - Exit')
 
-    x = input('Enter your choice -> ')
+    x = str(input('Enter your choice -> '))
     
     # switch
     if x == '1':
-        test.clear()
         # select a graduate school
         while True:
             print('Choose from the following graduate schools:')
@@ -35,30 +33,26 @@ while True:
                 print(str(i+2) + ' - [Empty]')
             print('0 - Cancel')
 
-            y = input('Enter your choice -> ')
+            y = str(input('Enter your choice -> '))
             
             if y == '0':
                 # return to the main menu
-                test.clear()
                 break
             elif y == '1':
                 school = 'UCLA'
 
                 # select a graduate program
                 while True:
-                    test.clear()
                     print('Choose from the following graduate programs:')
                     print('1 - Business')
                     print('2 - Engineering')
                     print('3 - Law')
                     print('0 - Cancel')
 
-                    z = input('Enter your choice -> ')
+                    z = str(input('Enter your choice -> '))
 
                     if z == '0':
-                        
                         # return to the graduate school menu
-                        test.clear()
                         break
                     elif z == '1':
                         degree = 'Business'
@@ -73,14 +67,12 @@ while True:
                         print('Invalid choice.\n')
                 
                 # return to the main menu
-                test.clear()
                 break
             else:
                 print('Invalid choice.\n')
     elif x == '2':
         # calculate chance of admit
         while True:
-            test.clear()
             print('Choose from the following menu options:')
             print('1 - Enter a Graduate Record Examinations (GRE) Score')
             print('2 - Enter a Test of English as a Foreign Language (TOEFL) Score')
@@ -93,12 +85,10 @@ while True:
             print('6 - Print')
             print('7 - Cancel')
 
-            m = input('Enter your choice -> ')
-            test.clear()
+            m = str(input('Enter your choice -> '))
 
             if m == '7':
                 # return to the main menu
-                
                 break
             elif m == '1':
                 main_input = input('Enter a GRE score  ')
@@ -126,7 +116,7 @@ while True:
                 else:
                     print('Sorry, you need to enter a number between 0.00 and 10.00')
             elif m == '4':
-                main_input('Enter a Research Experience value  ')
+                main_input = input('Enter a Research Experience value  ')
                 if (test.error_check(m, main_input) == True):
                     main_input = main_input.lower()
                     if (main_input == 'y' or main_input == 'yes'):
@@ -153,7 +143,6 @@ while True:
 
                     print(admit_val)
             elif m == '6':
-                test.clear()
                 print('Currently, the following values have been entered:')
                 print('Graduate Record Examination (GRE) Score: ' + str(gre_score))
                 print('Test of English as a Foreign Language (TOEFL) Score: '+ str(toefl_score))
