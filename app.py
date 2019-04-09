@@ -91,13 +91,13 @@ while True:
                 # return to the main menu
                 break
             elif m == '1':
-                main_input = input('Enter a GRE score  ')
+                main_input = int(input('Enter a GRE score  '))
                 if (test.error_check(m, main_input) == True):
                     gre_score = main_input
                 else:
                     print('Sorry, you need to enter a number between 0 and 340.')
             elif m == '2':
-                main_input = input('Enter a TOEFL score  ')
+                main_input = int(input('Enter a TOEFL score  '))
                 if (test.error_check(m, main_input) == True):
                     toefl_score = main_input
                 else:
@@ -110,7 +110,7 @@ while True:
             #elif m == '5':
             #    lor_val = float(input('Enter a LOR value  '))
             elif m == '3':
-                main_input = input('Enter a CGPA value  ')
+                main_input = int(input('Enter a CGPA value  '))
                 if (test.error_check(m, main_input) == True):
                     cgpa_val = main_input
                 else:
@@ -136,7 +136,7 @@ while True:
                     with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
                         csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
 
-                        myData = ['000', gre_score, toefl_score, 0, 0.0, 0.0, cgpa_val, res_val, 0.0]
+                        myData = ['000', gre_score, toefl_score, 3, 2.5, 2.5, cgpa_val, res_val, 0.0]
 
                         # write
                         csv_writer.writerow(myData)
