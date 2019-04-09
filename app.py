@@ -25,6 +25,7 @@ while True:
     
     # switch
     if x == '1':
+        test.clear()
         # select a graduate school
         while True:
             print('Choose from the following graduate schools:')
@@ -37,12 +38,14 @@ while True:
             
             if y == '0':
                 # return to the main menu
+                test.clear()
                 break
             elif y == '1':
                 school = 'UCLA'
 
                 # select a graduate program
                 while True:
+                    test.clear()
                     print('Choose from the following graduate programs:')
                     print('1 - Business')
                     print('2 - Engineering')
@@ -52,7 +55,9 @@ while True:
                     z = input('Enter your choice -> ')
 
                     if z == '0':
+                        
                         # return to the graduate school menu
+                        test.clear()
                         break
                     elif z == '1':
                         degree = 'Business'
@@ -67,12 +72,14 @@ while True:
                         print('Invalid choice.\n')
                 
                 # return to the main menu
+                test.clear()
                 break
             else:
                 print('Invalid choice.\n')
     elif x == '2':
         # calculate chance of admit
         while True:
+            test.clear()
             print('Choose from the following menu options:')
             print('1 - Enter a Graduate Record Examinations (GRE) Score')
             print('2 - Enter a Test of English as a Foreign Language (TOEFL) Score')
@@ -86,9 +93,11 @@ while True:
             print('7 - Cancel')
 
             m = input('Enter your choice -> ')
+            test.clear()
 
             if m == '7':
                 # return to the main menu
+                
                 break
             elif m == '1':
                 main_input = input('Enter a GRE score  ')
@@ -143,6 +152,7 @@ while True:
 
                     print(admit_val)
             elif m == '6':
+                test.clear()
                 print('Currently, the following values have been entered:')
                 print('Graduate Record Examination (GRE) Score: ' + str(gre_score))
                 print('Test of English as a Foreign Language (TOEFL) Score: '+ str(toefl_score))
