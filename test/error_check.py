@@ -1,19 +1,19 @@
 def error_check(m, main_input):
     if m == '1':
         # gre score must be between 0 and 340
-        if int(main_input) >= 0 && int(main_input) <= 340:
+        if int(main_input) >= 0 and int(main_input) <= 340:
             return True
         else:
             return False
     elif m == '2':
         # toefl score must be between 0 and 120
-        if int(main_input) >= 0 && int(main_input) <= 120:
+        if int(main_input) >= 0 and int(main_input) <= 120:
             return True
         else:
             return False
     elif m == '3':
         # cgpa must be between 0 and 10
-        if float(main_input) >= 0 && float(main_input) <= 10.0000:
+        if float(main_input) >= 0 and float(main_input) <= 10.0000:
             return True
         else:
             return False
