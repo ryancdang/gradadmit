@@ -116,7 +116,7 @@ while True:
                 else:
                     print('Sorry, you need to enter a number between 0.00 and 10.00')
             elif m == '4':
-                main_input('Enter a Research Experience value  ')
+                main_input = input('Enter a Research Experience value  ')
                 if (test.error_check(m, main_input) == True):
                     main_input = main_input.lower()
                     if (main_input == 'y' or main_input == 'yes'):
@@ -136,7 +136,7 @@ while True:
                     with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
                         csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
 
-                        myData = ['000', gre_score, toefl_score, 0, 0.0, 0.0, cgpa_val, res_val, 0.0]
+                        myData = ['000', gre_score, toefl_score, 3, 3.5, 3.5, cgpa_val, res_val]
 
                         # write
                         csv_writer.writerow(myData)
