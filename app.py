@@ -15,6 +15,7 @@ admit_val = 0.0
 
 # user interface
 while True:
+    test.clear()
     print('Choose from the following menu options:')
     print('1 - Select a Graduate School and Program')
     print('2 - Calculate Chance of Admit')
