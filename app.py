@@ -93,13 +93,13 @@ while True:
             elif m == '1':
                 main_input = input('Enter a GRE score  ')
                 if (test.error_check(m, main_input) == True):
-                    gre_score = main_input
+                    gre_score = int(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0 and 340.')
             elif m == '2':
                 main_input = input('Enter a TOEFL score  ')
                 if (test.error_check(m, main_input) == True):
-                    toefl_score = main_input
+                    toefl_score = int(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0 and 120.')
             #elif m == '3':
@@ -112,7 +112,7 @@ while True:
             elif m == '3':
                 main_input = input('Enter a CGPA value  ')
                 if (test.error_check(m, main_input) == True):
-                    cgpa_val = main_input
+                    cgpa_val = float(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0.00 and 10.00')
             elif m == '4':
