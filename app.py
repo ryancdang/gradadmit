@@ -13,6 +13,11 @@ cgpa_val = 0.0
 res_val = 0
 admit_val = 0.0
 
+cgpa_avg = 8.57644
+gre_avg = 316.472
+tofel_avg = 107.192
+has_rch_avg = 0.5
+
 # user interface
 while True:
     print('Choose from the following menu options:')
@@ -159,7 +164,15 @@ while True:
             else:
                 print('Invalid choice.\n')
     elif x == '3':
-        print('Running GradAdvice...\n')
+        if(cgpa_val < cgpa_avg):
+                print("\nYour CGPA is below average, consider focusing on school curriculium or retaking classes\n")
+        if(res_val ~= 1):
+                print("\nYou don't have reasearch experience, most students with high sucess chances have some research experience, consider looking for research opurtunities\n")
+        if(gre_score < gre_avg):
+                print("\nYour GRE score is below average, consider retaking the GRE is you are able to.\n)
+        
+          
+        
     elif x == '4':
         print('Exiting program...')
         sys.exit()
