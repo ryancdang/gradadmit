@@ -189,7 +189,7 @@ while True:
         if(res_val != 1):
                 print("\nYou don't have reasearch experience, most students with high sucess chances have some research experience, consider looking for research opurtunities\n")
         if(gre_score < gre_avg):
-                print("\nYour GRE score is below average, consider retaking the GRE is you are able to.\n)
+                print("\nYour GRE score is below average, consider retaking the GRE is you are able to.\n")
         input("\nPress Any Key to Continue\n")
         test.clear()
         
