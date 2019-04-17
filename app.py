@@ -70,6 +70,8 @@ while True:
                         break
                     else:
                         print('Invalid choice.\n')
+                        input("\nPress Any Key to Continue\n")
+                        test.clear()
                 
                 # return to the main menu
                 break
@@ -101,12 +103,17 @@ while True:
                     gre_score = int(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0 and 340.')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
             elif m == '2':
                 main_input = input('Enter a TOEFL score  ')
                 if (test.error_check(m, main_input) == True):
                     toefl_score = int(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0 and 120.')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
+                    
             #elif m == '3':
                 # evaluate to a numerical value from a text input #3 - #5
             #    uni_rating = int(input('Enter a University Rating  '))
@@ -120,6 +127,8 @@ while True:
                     cgpa_val = float(main_input)
                 else:
                     print('Sorry, you need to enter a number between 0.00 and 10.00')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
             elif m == '4':
                 main_input = input('Enter a Research Experience value  ')
                 if (test.error_check(m, main_input) == True):
@@ -130,12 +139,18 @@ while True:
                         res_val = 0
                 else:
                     print('Sorry, you need to enter a Y or N.')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
             elif m == '5':
                 # calculate chance of admit
                 if gre_score <= 0 or toefl_score <= 0 or cgpa_val <= 0:
                     print('Sorry, you need to enter a GRE score, TOEFL score, or a CGPA value.')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
                 elif degree == '' or school == '':
                     print('Sorry, you need to select a graduate school or program.')
+                    input("\nPress Any Key to Continue\n")
+                    test.clear()
                 else:
                     # write to csv file
                     with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
@@ -160,9 +175,14 @@ while True:
                 else:
                     print('Research Experience: Yes')
                 #print('Research Experience: ' + str(res_val))
-                print('\n')
+                
+                #print('\n')
+                input("\nPress Any Key to Continue\n")
+                test.clear()
             else:
                 print('Invalid choice.\n')
+                input("\nPress Any Key to Continue\n")
+                test.clear()
     elif x == '3':
         if(cgpa_val < cgpa_avg):
                 print("\nYour CGPA is below average, consider focusing on school curriculium or retaking classes\n")
@@ -170,6 +190,8 @@ while True:
                 print("\nYou don't have reasearch experience, most students with high sucess chances have some research experience, consider looking for research opurtunities\n")
         if(gre_score < gre_avg):
                 print("\nYour GRE score is below average, consider retaking the GRE is you are able to.\n)
+        input("\nPress Any Key to Continue\n")
+        test.clear()
         
           
         
@@ -178,3 +200,5 @@ while True:
         sys.exit()
     else:
         print('Invalid choice.\n')
+        input("\nPress Any Key to Continue\n")
+        test.clear()
