@@ -129,6 +129,9 @@ while True:
                 # return to the main menu
                 break
             elif m == '1':
+                print('Graduate Record Examinations (GRE) scores should be entered as whole numbers between 0 and 340.')
+                print('This field is required.')
+                print('Enter -1 to return to the Main Menu. No changes will be made.\n')
                 main_input = input('Enter a GRE score  ')
                 if (test.error_check(m, main_input) == True):
                     if int(main_input) == -1:
@@ -140,6 +143,10 @@ while True:
                     input('Press Any Key to Continue\n')
                     test.clear()
             elif m == '2':
+                print('Test of English as a Foreign Language (TOEFL) scores should be entered as whole numbers between 0 and 120.')
+                print('This field is required.')
+                print('Enter -1 to return to the Main Menu. No changes will be made.\n')
+                #print('Test of English as a Foreign Language (TOEFL) scores are whole numbers between 0 and 120.\n')
                 main_input = input('Enter a TOEFL score  ')
                 if (test.error_check(m, main_input) == True):
                     if int(main_input) == -1:
@@ -229,7 +236,7 @@ while True:
                     test.clear()
                 else:
                     # write to csv file
-                    with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
+                    with open('Admission_Predict_Ver1.1.csv', mode='a', newline='') as csv_file:
                         csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
 
                         myData = ['000', gre_score, toefl_score, uni_rating, sop_val, lor_val, cgpa_val, res_val]
