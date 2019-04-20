@@ -20,6 +20,7 @@ has_rch_avg = 0.5
 
 # user interface
 while True:
+	test.clear()
 	print('Choose from the following menu options:')
 	print('1 - Select a Graduate School and Program')
 	print('2 - Calculate Chance of Admit')
@@ -77,9 +78,12 @@ while True:
 				break
 			else:
 				print('Invalid choice.\n')
+				input("\nPress Enter to Continue\n")
+				test.clear()
 	elif x == '2':
 		# calculate chance of admit
 		while True:
+			test.clear()
 			print('Choose from the following menu options:')
 			print('1 - Enter a Graduate Record Examinations (GRE) Score')
 			print('2 - Enter a Test of English as a Foreign Language (TOEFL) Score')
@@ -130,7 +134,7 @@ while True:
 					input("\nPress Enter to Continue\n")
 					test.clear()
 			elif m == '4':
-				main_input = input('Enter a Research Experience value  ')
+				main_input = input('Enter a Research Experience value (Y/N)  ')
 				if (test.error_check(m, main_input) == True):
 					main_input = main_input.lower()
 					if (main_input == 'y' or main_input == 'yes'):
@@ -163,6 +167,7 @@ while True:
 
 					print(admit_val)
 			elif m == '6':
+				test.clear()
 				print('Currently, the following values have been entered:')
 				print('Graduate Record Examination (GRE) Score: ' + str(gre_score))
 				print('Test of English as a Foreign Language (TOEFL) Score: '+ str(toefl_score))
@@ -184,6 +189,7 @@ while True:
 				input("\nPress Enter to Continue\n")
 				test.clear()
 	elif x == '3':
+		test.clear()
 		if(cgpa_val < cgpa_avg):
 				print("\nYour CGPA is below average, consider focusing on school curriculium or retaking classes\n")
 		if(res_val != 1):
