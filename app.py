@@ -168,8 +168,9 @@ while True:
 
 						# write
 						csv_writer.writerow(myData)
-
-					print(admit_val)
+				
+				print(admit_val)
+				input("\nPress Enter To Continue\n")
 			elif m == '6':
 				test.clear()
 				print('Currently, the following values have been entered:')
