@@ -80,8 +80,6 @@ while True:
 				break
 			else:
 				print('Invalid choice.\n')
-				input("\nPress Enter to Continue\n")
-				test.clear()
 	elif x == '2':
 		# calculate chance of admit
 		while True:
@@ -104,6 +102,7 @@ while True:
 				# return to the main menu
 				break
 			elif m == '1':
+				test.clear()
 				main_input = input('Enter a GRE score  ')
 				if (test.error_check(m, main_input) == True):
 					gre_score = int(main_input)
@@ -112,6 +111,7 @@ while True:
 					input("\nPress Enter to Continue\n")
 					test.clear()
 			elif m == '2':
+				test.clear()
 				main_input = input('Enter a TOEFL score  ')
 				if (test.error_check(m, main_input) == True):
 					toefl_score = int(main_input)
@@ -128,6 +128,7 @@ while True:
 			#elif m == '5':
 			#    lor_val = float(input('Enter a LOR value  '))
 			elif m == '3':
+				test.clear()
 				main_input = input('Enter a CGPA value  ')
 				if (test.error_check(m, main_input) == True):
 					cgpa_val = float(main_input)
@@ -136,6 +137,7 @@ while True:
 					input("\nPress Enter to Continue\n")
 					test.clear()
 			elif m == '4':
+				test.clear()
 				main_input = input('Enter a Research Experience value (Y/N)  ')
 				if (test.error_check(m, main_input) == True):
 					main_input = main_input.lower()
@@ -157,8 +159,6 @@ while True:
 					print('Sorry, you need to select a graduate school or program.')
 					input("\nPress Enter to Continue\n")
 					test.clear()
-				input("\nPress Enter to Continue\n")
-				test.clear()
 				else:
 					# write to csv file
 					with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
@@ -170,8 +170,6 @@ while True:
 						csv_writer.writerow(myData)
 
 					print(admit_val)
-					input("\nPress Enter to Continue\n")
-					test.clear()
 			elif m == '6':
 				test.clear()
 				print('Currently, the following values have been entered:')
@@ -195,7 +193,6 @@ while True:
 				input("\nPress Enter to Continue\n")
 				test.clear()
 	elif x == '3':
-		test.clear()
 		if(cgpa_val < cgpa_avg):
 				print("\nYour CGPA is below average, consider focusing on school curriculium or retaking classes\n")
 		if(res_val != 1):
