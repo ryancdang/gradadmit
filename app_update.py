@@ -172,7 +172,7 @@ def linearregressioncalculation(a, b, c, d, e, f, g):
     # What is the ChanceofAdmit for a student with 
     #print(data.predict([[100,100,3,3.5,3.5,8.04,0]]))
 
-    return 1000
+    #return 1000
 
 
 # user interface
