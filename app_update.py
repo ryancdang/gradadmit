@@ -255,7 +255,8 @@ while True:
                 # return to the main menu
                 break
             elif m == '1':
-                print('Graduate Record Examinations (GRE) scores should be entered as whole numbers between 0 and 340.')
+                print('Graduate Record Examinations (GRE) is a standardized test that is an admissions requirement for most graduate schools in the United States.'_
+                print('Scores cannot be a number larger than 340.')
                 print('This field is required.')
                 print('Enter -1 to return to the Main Menu. No changes will be made.\n')
                 main_input = input('Enter a GRE score  ')
@@ -265,13 +266,18 @@ while True:
                     else:
                         gre_score = int(main_input)
                 else:
-                    print('Sorry, you need to enter a number between 0 and 340.\n')
-                    input('Press Any Key to Continue\n')
+                    print('GRE Scores are between 0 and 340.\n')
+                    input('Enter any key to continue -> ')
                     test.clear()
             elif m == '2':
-                print('Test of English as a Foreign Language (TOEFL) scores should be entered as whole numbers between 0 and 120.')
-                print('This field is required.')
+                print('Test of English as a Foreign Language (TOEFL) is a standardized test to measure the English language ability of non-native speakers wishing to enroll in English-speaking universities.')
+                print('Scores cannot be a number larger than 120.')
+                print('This field is required for non-native English speakers.')
                 print('Enter -1 to return to the Main Menu. No changes will be made.\n')
+                # The TOEFL is a test for non-native English speakers applying to English-speaking universities.
+                #print('Test of English as a Foreign Language (TOEFL) scores should be entered as whole numbers between 0 and 120.')
+                #print('This field is required.')
+                #print('Enter -1 to return to the Main Menu. No changes will be made.\n')
                 #print('Test of English as a Foreign Language (TOEFL) scores are whole numbers between 0 and 120.\n')
                 main_input = input('Enter a TOEFL score  ')
                 if (test.error_check(m, main_input) == True):
@@ -280,10 +286,14 @@ while True:
                     else:
                         toefl_score = int(main_input)
                 else:
-                    print('Sorry, you need to enter a number between 0 and 120.\n')
-                    input('Press Any Key to Continue\n')
+                    print('TOEFL Scores are between 0 and 120.\n')
+                    input('Enter any key to continue -> ')
                     test.clear()
             elif m == '3':
+                #print('University Ratings ')
+                #print('University Ratings should be entered as a whole numbers between 0 and 5.')
+                #print('This field is optional.')
+                #print('Enter -1 to return to the Main Menu. Default: 3.')
                 main_input = input('Enter a University Rating  ')
                 if (test.error_check(m, main_input) == True):
                     if int(main_input) == -1:
@@ -291,10 +301,17 @@ while True:
                     else:
                         uni_rating = int(main_input)
                 else:
-                    print('Sorry, you need to enter a number between 0 and 5.\n')
-                    input('Press Any Key to Continue\n')
+                    print('University Ratings are between 0 and 5.\n')
+                    input('Enter any key to continue -> ')
                     test.clear()
             elif m == '4':
+                print('A Statement of Purpose (SOP) is an essay telling the admission committee who you are, why you\'re applying, why you\'re a good candidate, and what you want to do in the future.')
+                print('Since an applicant (under normal circumstances) does not know the strength of their SOP, this field is optional.')
+                print('Unless you are confident that you have a strong SOP, the default is 3.5.')
+                print('Enter -1 to return to the Main Menu. SOP will remain 3.5.')
+                #print('A Statement of Purpose (SOP) Strength serves to introduce your research/professional skills and interests to the programs you\'re applying for.')
+                #print('SOP values can be decimal values between 0 and 5. This field is optional.')
+                #print('Enter -1 to return to the Main Menu. Default: 3.5')
                 main_input = input('Enter a SOP value  ')
                 if (test.error_check(m, main_input) == True):
                     try:
@@ -305,10 +322,13 @@ while True:
                     except:
                         sop_val = float(main_input)
                 else:
-                    print('Sorry, you need to enter a number between 0.00 and 5.00.\n')
-                    input('Press Any Key to Continue\n')
+                    print('SOP values are between 0.00 and 5.00.\n')
+                    input('Enter any key to continue -> ')
                     test.clear()
             elif m == '5':
+                print('A Letter of Recommendation (LOR) Strength...')
+                print('LOR values can be decimal values between 0.00 and 5.00. This field is optional.')
+                print('Enter -1 to return to the Main Menu.')
                 main_input = input('Enter a LOR value  ')
                 if (test.error_check(m, main_input) == True):
                     try:
