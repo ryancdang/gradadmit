@@ -1,6 +1,14 @@
 import csv
 import sys
 import test
+# import warnings filter
+#from warnings import simplefilter
+# ignore all future warnings
+#simplefilter(action='ignore', category=FutureWarning)
+# import warnings filter
+#from warnings import simplefilter
+# ignore all future warnings
+#simplefilter(action='ignore', category=FutureWarning)
 
 school = ''
 degree = ''
@@ -18,36 +26,134 @@ gre_avg = 316.472
 tofel_avg = 107.192
 has_rch_avg = 0.5
 
-def linearregressioncalculation(file):
-    import pandas as pd
-    data = pd.read_csv(file)
+def linearregressioncalculation(a, b, c, d, e, f, g):
+    #import pandas as pd
+    #data = pd.read_csv(file)
 
-    data.drop('Serial No.', inplace=True, axis=1)
-    data.rename({'Chance of Admit ': 'ChanceofAdmit', 'LOR ':'LOR'}, axis=1, inplace=True)
+    #data.drop('Serial No.', inplace=True, axis=1)
+    #data.rename({'Chance of Admit ': 'ChanceofAdmit', 'LOR ':'LOR'}, axis=1, inplace=True)
 
     ## Data has 500 rows and 8 columns, after erasing serial number
     #print(data.head())
 
-    X=data.iloc[:, 0:7].values
+    #X=data.iloc[:, 0:7].values
     #X is the attributes
-    y=data.iloc[:, 7].values
+    #y=data.iloc[:, 7].values
     #Y is the label
 
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+    #from sklearn.model_selection import train_test_split
+    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 
-    from sklearn.preprocessing import StandardScaler
-    scaler = StandardScaler()
-    scaler.fit(X_train)
+    #from sklearn.preprocessing import StandardScaler
+    #scaler = StandardScaler()
+    #scaler.fit(X_train)
 
-    X_train = scaler.transform(X_train)
-    X_test = scaler.transform(X_test)
+    #X_train = scaler.transform(X_train)
+    #X_test = scaler.transform(X_test)
 
-    from sklearn import linear_model
-    from sklearn import svm
-    clf = linear_model.LinearRegression();
-    results = clf.fit(X_train, y_train).predict(X_test);
-    return results[len(results) -1]
+    #from sklearn import linear_model
+    #from sklearn import svm
+    #clf = linear_model.LinearRegression();
+    #results = clf.fit(X_train, y_train).predict(X_test);
+    #return results[len(results) -1]
+
+
+    # import packages
+    #import numpy as np
+    #import pandas as pd
+    #from sklearn.tree import DecisionTreeRegressor
+    #from sklearn.metrics import mean_absolute_error
+    #from sklearn.model_selection import train_test_split
+
+    # uploading the dataset
+    #graduate_admisssion_data = pd.read_csv('Admission_Predict_Ver1.1.csv')
+
+    # Test to see if the data can open
+    #graduate_admisssion_data.head()
+
+    # Check if the columns name are correctly named
+    #graduate_admisssion_data.columns
+
+    # Clean the titles of the columns, because there are spaces
+    #graduate_admisssion_data.columns = graduate_admisssion_data.columns.str.replace(' ', '_')
+    #Check to see if the spaces have been replaced
+    #graduate_admisssion_data.columns
+
+    ###
+    #y = graduate_admisssion_data.Chance_of_Admit_
+    #admission_features = ['GRE_Score', 'TOEFL_Score', 'University_Rating', 'SOP', 'LOR_', 'CGPA', 'Research']
+    #X = graduate_admisssion_data[admission_features]
+
+    #admission_model = DecisionTreeRegressor(random_state=1)
+    #admission_model.fit(X, y)
+
+    #print("Making predictions for the following 5 students:")
+    #print(X.head(502))
+    #print("The predictions are")
+    #print(admission_model.predict(X.head()))
+
+    #return admission_model.predict([[a,b,c,d,e,f,g]])
+
+    import pandas as pd
+    import numpy as np
+    #from sklearn.tree import DecisionTreeRegressor
+    #from sklearn.metrics import mean_absolute_error
+    #from sklearn.model_selection import train_test_split
+
+    #from sklearn import neighbors
+
+    # Load the dataset
+    data = pd.read_csv('Admission_Predict_Ver1.1.csv')
+
+    # Clean the column names in the dataset
+    data.drop('Serial No.', inplace=True, axis=1)
+    data.rename({'Chance of Admit ': 'ChanceofAdmit', 'LOR ':'LOR'}, axis=1, inplace=True)
+
+    # X is the data
+    #admission_features = ['GRE Score', 'TOEFL Score', 'University Rating', 'SOP', 'LOR', 'CGPA', 'Research']
+    #X = data[admission_features]
+    X = data.iloc[:, :-1]
+
+    # y = target values, last column of the data frame
+    y = data.iloc[:, -1]
+    #data.head()
+    #print(data.columns)
+
+    # Check to see if columns were named correctly
+    #data.GRE_Score
+    
+    # X is the data
+    #X = data['GRE_Score', 'TOEFL_Score', 'University_Rating', 'SOP', 'LOR', 'CGPA', 'Research']
+    
+    # y is the target
+    #y = data.ChanceofAdmit
+
+    # Model
+    from sklearn.linear_model import LogisticRegression
+    #from sklearn import svm
+        
+    model = LogisticRegression(random_state=1)
+    model.fit(X,y)
+
+    #print('Step 3, Done.\n')
+
+    #from sklearn import preprocessing
+    #from sklearn import utils
+
+    #lab_enc = preprocessing.LabelEncoder()
+    #encoded = lab_enc.fit_transform(data)
+
+    # kNN
+    #knn = neighbors.KNeighborsClassifier(n_neighbors=1)
+    #knn.fit(X,y)
+
+    #print('Step 4, Done.\n')
+
+    # What is the ChanceofAdmit for a student with 
+    #print(data.predict([[100,100,3,3.5,3.5,8.04,0]]))
+
+    return 1000
+
 
 # user interface
 while True:
@@ -213,21 +319,24 @@ while True:
             elif m == '7':
                 main_input = input('Enter a Research Experience value  ')
                 if (test.error_check(m, main_input) == True):
-                    if int(main_input) == -1:
-                        res_val = 0
-                    else:
-                        if main_input.lower() == 'y' or main_input.lower() == 'yes':
-                            res_val = 1
-                        else:
+                    try:
+                        if int(main_input) == -1:
                             res_val = 0
+                        else:
+                            if main_input.lower() == 'y' or main_input.lower() == 'yes':
+                                res_val = 1
+                            else:
+                                res_val = 0
+                    except:
+                        res_val = res_val
                 else:
                     print('Sorry, you need to enter a Y or N.\n')
                     input('Press Any Key to Continue\n')
                     test.clear()
             elif m == '8':
                 # calculate chance of admit
-                if gre_score <= 0 or toefl_score <= 0 or cgpa_val <= 0:
-                    print('Sorry, you need to enter a GRE score, TOEFL score, or a CGPA value.\n')
+                if gre_score <= 0 or cgpa_val <= 0:
+                    print('Sorry, you need to enter a GRE score or a CGPA value.\n')
                     input('Press Any Key to Continue\n')
                     test.clear()
                 elif degree == '' or school == '':
@@ -235,18 +344,59 @@ while True:
                     input('Press Any Key to Continue\n')
                     test.clear()
                 else:
-                    # write to csv file
-                    with open('Admission_Predict_Ver1.1.csv', mode='a', newline='') as csv_file:
-                        csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+                    # Copy original dataset to model test/train dataset (put it at the beginning, just in case?)
+                    with open('Admission_Predict_Ver1.0.csv', mode='r') as original_file:
+                        csv_reader_original = csv.reader(original_file, delimiter=',')
+                        with open('Admission_Predict_Ver1.1.csv', mode='w', newline='\n') as copy_file:
+                            csv_writer_copy = csv.writer(copy_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+                            for row in original_file:
+                                copy_file.write(row)
 
-                        myData = ['000', gre_score, toefl_score, uni_rating, sop_val, lor_val, cgpa_val, res_val]
+                    # write to csv file
+                    with open('Admission_Predict_Ver1.1.csv', mode='a', newline='\n') as csv_file:
+                        csv_writer = csv.writer(csv_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+                        #csv_writer = csv.writer(csv_file, lineterminator='\n')
+                        
+                    
+                        #myData = ['501', int(gre_score), int(toefl_score), int(uni_rating), float(sop_val), float(lor_val), float(cgpa_val), int(res_val), float(admit_val)]
 
                         # write
-                        csv_writer.writerow(myData)
+                        #csv_writer.writerow(myData)
                     
-                    admit_val = linearregressioncalculation('Admission_Predict_Ver1.1.csv')
+                    print('Calculating..\n')
+
+                    #try:
+                    admit_val = linearregressioncalculation(gre_score, toefl_score, uni_rating, sop_val, lor_val, cgpa_avg, res_val)
+                    #except:
+                        # What now? Store admit_val as what??
+                    #    admit_val = 123456789
                     
                     print(admit_val)
+
+                    # Replace Admission_Predict_Ver1.1.csv with Default Copy
+                    #with open('Admission_Predict_Ver1.0.csv', mode='r') as original_file:
+                    #    csv_reader = csv.reader(original_file, delimiter=',')
+                    #    line_count = 0
+                    #    for row in csv_reader:
+                    #        if line_count == 0:
+                    #            with open('Admission_Predict_Ver1.1.csv', mode='w', newline='') as copy_file:
+                    #                csv_writer = csv.writer(copy_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+                    #                csv_writer.writerow(f'{", ".join(row)}')
+                                #print(f'{", ".join(row)}')
+                    #            line_count += 1
+                    #        else:
+                    #            if line_count <= 500:
+                    #                with open('Admission_Predict_Ver1.1.csv', mode='a', newline='') as copy_file:
+                    #                    csv_writer = csv.writer(copy_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+                    #                    csv_writer.writerow(f'{row[0]},{row[1]},{row[2]},{row[3]},{row[4]},{row[5]},{row[6]},{row[7]},{row[8]}') 
+                                    #print(f'{row[0]},{row[1]},{row[2]},{row[3]},{row[4]},{row[5]},{row[6]},{row[7]},{row[8]}')
+                    #                line_count += 1
+                    #    print('\nDone.\n')
+
+                    
+                    
+                    #print('\nDone.\n')
+
             elif m == '9':
                 print('Currently, the following values have been entered:')
                 print('Graduate Record Examination (GRE) Score: ' + str(gre_score))
