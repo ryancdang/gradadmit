@@ -33,6 +33,7 @@ while True:
 	if x == '1':
 		# select a graduate school
 		while True:
+			test.clear()
 			print('Choose from the following graduate schools:')
 			print('1 - UCLA')
 			for i in range(8):
@@ -49,6 +50,7 @@ while True:
 
 				# select a graduate program
 				while True:
+					test.clear()
 					print('Choose from the following graduate programs:')
 					print('1 - Business')
 					print('2 - Engineering')
@@ -155,6 +157,8 @@ while True:
 					print('Sorry, you need to select a graduate school or program.')
 					input("\nPress Enter to Continue\n")
 					test.clear()
+				input("\nPress Enter to Continue\n")
+				test.clear()
 				else:
 					# write to csv file
 					with open('Admission_Predict_Ver1.1.csv', mode='a') as csv_file:
@@ -166,6 +170,8 @@ while True:
 						csv_writer.writerow(myData)
 
 					print(admit_val)
+					input("\nPress Enter to Continue\n")
+					test.clear()
 			elif m == '6':
 				test.clear()
 				print('Currently, the following values have been entered:')
