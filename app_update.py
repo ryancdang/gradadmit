@@ -95,7 +95,7 @@ def linearregressioncalculation(a, b, c, d, e, f, g):
     #return admission_model.predict([[a,b,c,d,e,f,g]])
 
     import pandas as pd
-    import numpy as np
+    #import numpy as np
     #from sklearn.tree import DecisionTreeRegressor
     #from sklearn.metrics import mean_absolute_error
     #from sklearn.model_selection import train_test_split
@@ -129,11 +129,31 @@ def linearregressioncalculation(a, b, c, d, e, f, g):
     #y = data.ChanceofAdmit
 
     # Model
-    from sklearn.linear_model import LogisticRegression
+    #from sklearn.linear_model import LogisticRegression
     #from sklearn import svm
         
-    model = LogisticRegression(random_state=1)
-    model.fit(X,y)
+    #model = LogisticRegression(random_state=1)
+    #model.fit(X,y)
+
+    # Train/Test the Model
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+
+     #from sklearn.model_selection import train_test_split
+    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler()
+    scaler.fit(X_train)
+
+    X_train = scaler.transform(X_train)
+    X_test = scaler.transform(X_test)
+
+    from sklearn import linear_model
+    from sklearn import svm
+    clf = linear_model.LinearRegression();
+    results = clf.fit(X_train, y_train).predict(X_test);
+    return results[len(results) -1]
 
     #print('Step 3, Done.\n')
 
@@ -358,10 +378,10 @@ while True:
                         #csv_writer = csv.writer(csv_file, lineterminator='\n')
                         
                     
-                        #myData = ['501', int(gre_score), int(toefl_score), int(uni_rating), float(sop_val), float(lor_val), float(cgpa_val), int(res_val), float(admit_val)]
+                        myData = ['501', int(gre_score), int(toefl_score), int(uni_rating), float(sop_val), float(lor_val), float(cgpa_val), int(res_val), float(admit_val)]
 
                         # write
-                        #csv_writer.writerow(myData)
+                        csv_writer.writerow(myData)
                     
                     print('Calculating..\n')
 
