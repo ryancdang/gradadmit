@@ -279,7 +279,7 @@ while True:
 					with open('Admission_Predict_Ver1.0.csv', mode='r') as original_file:
 						csv_original_reader = csv.reader(original_file, delimiter=',')
 						with open('Admission_Predict_Ver1.1.csv', mode='w', newline='\n') as new_file:
-							csv_new_writer = csv.writer(copy_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
+							csv_new_writer = csv.writer(new_file, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
 							for row in original_file:
 								new_file.write(row)
 					
