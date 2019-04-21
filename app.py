@@ -298,7 +298,7 @@ while True:
 						admit_val = 0.72174
 					
 					print(admit_val)
-					input('Press any character to continue -> ')
+					input('Enter any character to continue -> ')
 			elif m == '9':
 				test.clear()
 				print('Currently, the following values have been entered:')
@@ -313,28 +313,45 @@ while True:
 				else:
 					print('Research Experience: Yes')
 				print('\n')
-				input('Press any character to continue -> ')
+				input('Enter any character to continue -> ')
 				test.clear()
 			else:
 				print('Invalid choice.\n')
-				input('Press any character to continue -> ')
+				input('Enter any character to continue -> ')
 				test.clear()
 	elif x == '3':
-		if(cgpa_val < cgpa_avg):
-			print("\nYour CGPA is below average, consider focusing on school curriculium or retaking classes\n")
-		if(res_val != 1):
-			print("\nYou don't have reasearch experience, most students with high sucess chances have some research experience, consider looking for research opurtunities\n")
-		if(gre_score < gre_avg):
-			print("\nYour GRE score is below average, consider retaking the GRE is you are able to.\n")
-		input("\nPress Enter to Continue\n")
-		test.clear()
+		if (admit_val <= 0):
+			print('You need to calculate Chance of Admit before running GradAdvice.\n')
+		else:
+			advice_msg = 0
+			if (gre_score < gre_avg):
+				print('Your GRE score is low. Consider retaking the GRE if you are able to. You can retake the GRE up to five times in a 12-month period, as long as the last time you took the GRE was at least 21 days ago.\n')
+				advice_msg += 1
+			
+			if (toefl_score < 0 and toefl_score < 107.1920):
+				print('You are a non-native English speaker. Consider retaking the TOEFL after improving your English language skills. You can retake the TOEFL as many times you want, but there must be between 12 days between each of your test dates.\n')
+				advice_msg += 1
+			
+			if (cgpa_val < cgpa_avg):
+				print('Your CGPA is below average. If you have time, finish the semester strong!\n')
+				advice_msg += 1
+			
+			if (res_val != 1):
+				print('You do not have Research Experience. Most students have a higher Chance of Admit has some Research Experience. Consider looking into some research opportunities.\n')
+				advice_msg += 1
+			
+			if (advice_msg == 0):
+				print('\nLooks like you have a high GRE score and/or TOEFL score, better than or average CGPA, and some form of Research Experience.')
+				print('Focus on writing an excellent Statement of Purpose or obtaining that Letter of Recommendation that will help convince the Admission Committee to accept you.\n')
+			else:
+				print('\nLooks like you need to make some improvements! If you do not have time, focus on writing an excellent Statement of Purpose or obtaining that Letter of Recommendation that will help convince the Admission Committee to accept you.\n')
 		
-		  
-		
+		input('Enter any character to continue -> ')
+		test.clear()	
 	elif x == '4':
 		print('Exiting program...')
 		sys.exit()
 	else:
 		print('Invalid choice.\n')
-		input("\nPress Enter to Continue\n")
+		input('Enter any character to continue -> ')
 		test.clear()
